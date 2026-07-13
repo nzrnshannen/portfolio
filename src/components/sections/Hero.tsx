@@ -25,7 +25,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="md:text-7xl text-5xl lg:text-8xl font-extrabold text-center relative z-20 tracking-tight">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-center relative z-20 tracking-tight">
             Hi, I'm{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-300 to-indigo-400 drop-shadow-sm">
               Shannen Nazareno
@@ -33,7 +33,7 @@ export const Hero = () => {
           </h1>
         </motion.div>
 
-        <div className="mt-4 md:mt-6 w-[40rem]">
+        <div className="mt-4 md:mt-6 w-full max-w-[40rem] px-2">
           <TextGenerateEffect
             words="Information Systems | Automation | Data Science"
             className="text-center text-neutral-300 md:text-2xl"

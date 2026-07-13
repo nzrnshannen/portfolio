@@ -88,7 +88,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-neutral-700/50 flex-shrink-0 bg-gradient-to-br from-neutral-800/80 to-neutral-900/90 shadow-2xl backdrop-blur-sm px-8 py-6 md:w-[450px] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] transition-all duration-500 overflow-hidden group"
+            className="w-[350px] max-w-[85vw] relative rounded-2xl border border-neutral-700/50 flex-shrink-0 bg-gradient-to-br from-neutral-800/80 to-neutral-900/90 shadow-2xl backdrop-blur-sm px-6 md:px-8 py-6 md:w-[450px] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] transition-all duration-500 overflow-hidden group"
             key={item.name + idx}
           >
             {/* Subtle inner glow on hover */}

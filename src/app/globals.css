@@ -48,3 +48,12 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(82, 82, 82, 1); /* neutral-600 */
 }
+
+/* Hide scrollbar for horizontal mobile swiping */
+.no-visible-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
