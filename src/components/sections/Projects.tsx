@@ -7,6 +7,13 @@ import Image from "next/image";
 export const Projects = () => {
   const websites = [
     {
+      title: "Tuskee",
+      description: "A cozy, retro-inspired personal dashboard and productivity application featuring a master notebook, task checklist, focus timer, embedded jukebox, and classic arcade games.",
+      link: "https://tuskee-notebook.vercel.app/",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+      tags: ["React", "Vite", "Tailwind CSS", "Supabase"],
+    },
+    {
       title: "DevKwest",
       description: "A dynamic project generator designed for challenging developers with unique problem statements.",
       link: "https://devkwest.vercel.app/",
