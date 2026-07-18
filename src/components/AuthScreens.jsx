@@ -7,6 +7,8 @@ export default function AuthScreens({ authView, setAuthView, onRegisterSuccess }
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // Clear errors when switching views
   const switchView = (view) => {
@@ -14,6 +16,8 @@ export default function AuthScreens({ authView, setAuthView, onRegisterSuccess }
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+    setShowPassword(false);
+    setShowConfirmPassword(false);
     setAuthView(view);
   };
 
@@ -153,14 +157,26 @@ export default function AuthScreens({ authView, setAuthView, onRegisterSuccess }
 
         <div className="flex flex-col gap-1">
           <label className="font-pixel text-[10px] text-brand-plum uppercase tracking-wider">Password</label>
-          <input 
-            type="password" 
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 text-sm font-medium outline-none transition-colors"
-            placeholder="Enter password"
-          />
+          <div className="relative">
+            <input 
+              type={showPassword ? "text" : "password"} 
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 pr-10 text-sm font-medium outline-none transition-colors"
+              placeholder="Enter password"
+            />
+            {password.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-brand-plum/60 hover:text-brand-plum focus:outline-none"
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="flex justify-between items-center mt-4">
@@ -210,26 +226,50 @@ export default function AuthScreens({ authView, setAuthView, onRegisterSuccess }
 
         <div className="flex flex-col gap-1">
           <label className="font-pixel text-[10px] text-brand-plum uppercase tracking-wider">Password</label>
-          <input 
-            type="password" 
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 text-sm font-medium outline-none transition-colors"
-            placeholder="Choose password"
-          />
+          <div className="relative">
+            <input 
+              type={showPassword ? "text" : "password"} 
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 pr-10 text-sm font-medium outline-none transition-colors"
+              placeholder="Choose password"
+            />
+            {password.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-brand-plum/60 hover:text-brand-plum focus:outline-none"
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col gap-1">
           <label className="font-pixel text-[10px] text-brand-plum uppercase tracking-wider">Confirm Password</label>
-          <input 
-            type="password" 
-            required
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 text-sm font-medium outline-none transition-colors"
-            placeholder="Confirm password"
-          />
+          <div className="relative">
+            <input 
+              type={showConfirmPassword ? "text" : "password"} 
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="w-full bg-[#FFFDF9] border-2 border-brand-plum focus:border-brand-plum focus:bg-white text-brand-plum px-3 py-2 pr-10 text-sm font-medium outline-none transition-colors"
+              placeholder="Confirm password"
+            />
+            {confirmPassword.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-brand-plum/60 hover:text-brand-plum focus:outline-none"
+                title={showConfirmPassword ? "Hide password" : "Show password"}
+              >
+                {showConfirmPassword ? "🙈" : "👁️"}
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="flex justify-between items-center mt-4">
