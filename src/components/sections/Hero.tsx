@@ -3,6 +3,8 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedinIn, FaKaggle } from "react-icons/fa6";
+import { FaMediumM } from "react-icons/fa";
 
 export const Hero = () => {
   return (
@@ -24,7 +26,35 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="flex flex-col items-center"
         >
+          <div className="flex justify-center items-center gap-6 mb-6">
+            <a href="https://github.com/nzrnshannen" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group relative flex justify-center items-center text-white/80 hover:text-[#38bdf8] hover:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] transition-all duration-300">
+              <FaGithub className="w-6 h-6 md:w-7 md:h-7" />
+              <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">
+                GitHub
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/nzrnshannen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group relative flex justify-center items-center text-white/80 hover:text-[#818cf8] hover:drop-shadow-[0_0_10px_rgba(129,140,248,0.8)] transition-all duration-300">
+              <FaLinkedinIn className="w-7 h-7 md:w-8 md:h-8" />
+              <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">
+                LinkedIn
+              </span>
+            </a>
+            <a href="https://www.kaggle.com/nzrnshannen" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" className="group relative flex justify-center items-center text-white/80 hover:text-[#38bdf8] hover:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] transition-all duration-300">
+              <FaKaggle className="w-7 h-7 md:w-8 md:h-8" />
+              <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">
+                Kaggle
+              </span>
+            </a>
+            <a href="https://medium.com/@nzrnshannen" target="_blank" rel="noopener noreferrer" aria-label="Medium" className="group relative flex justify-center items-center text-white/80 hover:text-[#818cf8] hover:drop-shadow-[0_0_10px_rgba(129,140,248,0.8)] transition-all duration-300">
+              <FaMediumM className="w-7 h-7 md:w-8 md:h-8" />
+              <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">
+                Medium
+              </span>
+            </a>
+          </div>
+
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-center relative z-20 tracking-tight">
             Hi, I'm{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-300 to-indigo-400 drop-shadow-sm">
