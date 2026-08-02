@@ -42,7 +42,7 @@ export const Hero = () => {
               </span>
             </a>
             <a href="https://www.kaggle.com/nzrnshannen" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" className="group relative flex justify-center items-center text-white/80 hover:text-[#38bdf8] hover:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] transition-all duration-300">
-              <FaKaggle className="w-7 h-7 md:w-8 md:h-8" />
+              <FaKaggle className="w-7 h-7 md:w-8 md:h-8 relative bottom-[2px]" />
               <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">
                 Kaggle
               </span>
