@@ -140,38 +140,55 @@ export const Projects = () => {
     </div>
   );
 
+  const MovingBorderContainer = ({ title, subtitle, items }: { title: string, subtitle: string, items: any[] }) => (
+    <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
+      {/* Moving border overlay */}
+      <div className="absolute inset-[-1px] rounded-[17px] pointer-events-none overflow-hidden [transform:translateZ(0)]">
+        <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 animate-[spin_24s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_20%,#ffffff_40%,#38bdf8_48%,transparent_50%,transparent_70%,#ffffff_90%,#38bdf8_98%,transparent_100%)]" />
+        <div className="absolute inset-[1px] bg-neutral-950 rounded-2xl" />
+      </div>
+
+      {/* Inner content */}
+      <div className="relative z-10 w-full h-full">
+        <h2 className="text-xl md:text-3xl font-bold mb-2">{title}</h2>
+        <p className="text-neutral-400">{subtitle}</p>
+        <GridContent items={items} />
+      </div>
+    </div>
+  );
+
   const tabs = [
     {
       title: "Websites Developed",
       value: "websites",
       content: (
-        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-xl md:text-3xl font-bold mb-2">Web Applications</h2>
-          <p className="text-neutral-400">Full-stack web applications and platforms.</p>
-          <GridContent items={websites} />
-        </div>
+        <MovingBorderContainer 
+          title="Web Applications" 
+          subtitle="Full-stack web applications and platforms." 
+          items={websites} 
+        />
       ),
     },
     {
       title: "Data Science & Kaggle",
       value: "datascience",
       content: (
-        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-xl md:text-3xl font-bold mb-2">Data Science Portfolios</h2>
-          <p className="text-neutral-400">Exploratory Data Analysis and Predictive Models.</p>
-          <GridContent items={dataScience} />
-        </div>
+        <MovingBorderContainer 
+          title="Data Science Portfolios" 
+          subtitle="Exploratory Data Analysis and Predictive Models." 
+          items={dataScience} 
+        />
       ),
     },
     {
       title: "Technical Blogs",
       value: "blogs",
       content: (
-        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-xl md:text-3xl font-bold mb-2">Articles & Insights</h2>
-          <p className="text-neutral-400">Published articles on Medium discussing data trends and insights.</p>
-          <GridContent items={blogs} />
-        </div>
+        <MovingBorderContainer 
+          title="Articles & Insights" 
+          subtitle="Published articles on Medium discussing data trends and insights." 
+          items={blogs} 
+        />
       ),
     },
   ];
