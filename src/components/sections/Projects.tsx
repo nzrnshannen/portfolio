@@ -24,83 +24,88 @@ const GridContent = ({ items }: { items: any[] }) => {
   };
 
   return (
-    <div className="flex flex-col h-full w-full overflow-hidden">
-      <motion.div 
-        className="flex flex-row w-full flex-grow"
-        animate={{ x: `-${(page - 1) * 100}%` }}
-        transition={{ type: "spring", stiffness: 250, damping: 25 }}
-      >
-        {pagesArray.map((pageItems, pageIndex) => (
-          <div key={pageIndex} className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-4 pb-2 px-1">
-            {pageItems.map((item, idx) => (
-              <a
-                key={idx}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl overflow-hidden hover:bg-neutral-800 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] flex flex-col h-full relative"
-              >
-                {/* Subtle inner glow on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
-                
-                {item.image && (
-                  <div className="w-full h-36 relative overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-80" />
+    <div className="flex flex-col h-full w-full relative">
+      <div className="w-full flex-grow overflow-hidden">
+        <motion.div 
+          className="flex flex-row w-full h-full"
+          animate={{ x: `-${(page - 1) * 100}%` }}
+          transition={{ type: "spring", stiffness: 250, damping: 25 }}
+        >
+          {pagesArray.map((pageItems, pageIndex) => (
+            <div key={pageIndex} className="w-full h-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-4 pb-2 px-1">
+              {pageItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl overflow-hidden hover:bg-neutral-800 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] flex flex-col h-full relative"
+                >
+                  {/* Subtle inner glow on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
+                  
+                  {item.image && (
+                    <div className="w-full h-36 relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-80" />
+                    </div>
+                  )}
+                  
+                  <div className="p-4 md:p-5 flex flex-col flex-grow relative z-10">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
+                        {item.title}
+                      </h3>
+                      <ExternalLink className="w-5 h-5 text-neutral-500 group-hover:text-teal-400 transition-colors flex-shrink-0 ml-2" />
+                    </div>
+                    <p className="text-neutral-400 text-sm mb-6 line-clamp-3">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {item.tags.map((tag: string, tagIdx: number) => (
+                        <span
+                          key={tagIdx}
+                          className="px-3 py-1 bg-neutral-950/80 text-neutral-300 text-xs rounded-full border border-neutral-700/50 group-hover:border-teal-500/40 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                )}
-                
-                <div className="p-4 md:p-5 flex flex-col flex-grow relative z-10">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-neutral-500 group-hover:text-teal-400 transition-colors flex-shrink-0 ml-2" />
-                  </div>
-                  <p className="text-neutral-400 text-sm mb-6 line-clamp-3">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {item.tags.map((tag: string, tagIdx: number) => (
-                      <span
-                        key={tagIdx}
-                        className="px-3 py-1 bg-neutral-950/80 text-neutral-300 text-xs rounded-full border border-neutral-700/50 group-hover:border-teal-500/40 transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        ))}
-      </motion.div>
+                </a>
+              ))}
+            </div>
+          ))}
+        </motion.div>
+      </div>
       
       {totalPages > 1 && (
-        <div className="flex justify-end items-center gap-4 mt-4 pt-4 border-t border-neutral-800/50">
+        <>
           <button 
             onClick={handlePrev} 
             disabled={page === 1}
-            className="p-2 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-teal-500/50 hover:bg-neutral-800 disabled:opacity-30 disabled:pointer-events-none transition-all"
+            className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-700/50 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-neutral-900 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-0 disabled:pointer-events-none transition-all"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
-          <span className="text-sm font-medium text-neutral-500">
-            {page} / {totalPages}
-          </span>
+          
           <button 
             onClick={handleNext} 
             disabled={page === totalPages}
-            className="p-2 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-teal-500/50 hover:bg-neutral-800 disabled:opacity-30 disabled:pointer-events-none transition-all"
+            className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-700/50 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-neutral-900 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-0 disabled:pointer-events-none transition-all"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </button>
-        </div>
+
+          {/* Floating page indicator at top right */}
+          <div className="absolute -top-10 right-0 z-20 px-3 py-1 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-800/80 text-xs font-semibold text-neutral-400 shadow-lg pointer-events-none">
+            {page} / {totalPages}
+          </div>
+        </>
       )}
     </div>
   );
@@ -127,23 +132,23 @@ export const Projects = () => {
   const websites = [
     {
       title: "Tuskee",
-      description: "A cozy, retro-inspired personal dashboard and productivity application featuring a master notebook, task checklist, focus timer, embedded jukebox, and classic arcade games.",
+      description: "A cozy, retro-inspired personal dashboard and productivity app with a notebook, focus timer, and arcade games.",
       link: "https://tuskee-notebook.vercel.app/",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+      image: "/projects/tuskee.jpg",
       tags: ["React", "Vite", "Tailwind CSS", "Supabase"],
     },
     {
       title: "DevKwest",
       description: "A dynamic project generator designed for challenging developers with unique problem statements.",
       link: "https://devkwest.vercel.app/",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      image: "/projects/devkwest.png",
       tags: ["Next.js", "React", "Tailwind CSS"],
     },
     {
       title: "Scikit-Hero",
       description: "An interactive learning platform and introduction to Machine Learning for those who want to learn Scikit-Learn.",
       link: "https://scikit-hero.vercel.app/",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+      image: "/projects/scikit-hero.jpg",
       tags: ["Machine Learning", "Scikit-Learn", "React"],
     },
   ];
