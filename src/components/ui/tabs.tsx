@@ -116,7 +116,7 @@ export const FadeInDiv = ({
           }}
           className={cn(
             "w-full",
-            isActive(tab) ? "relative" : "absolute top-0 left-0 overflow-hidden",
+            isActive(tab) ? "relative" : "absolute top-0 left-0 overflow-hidden max-h-full",
             className
           )}
         >

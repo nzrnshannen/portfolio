@@ -3,13 +3,17 @@
 import React, { useState } from "react";
 import { Tabs } from "@/components/ui/tabs";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const GridContent = ({ items }: { items: any[] }) => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 3;
   const totalPages = Math.ceil(items.length / itemsPerPage);
   
-  const currentItems = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  const pagesArray = [];
+  for (let i = 0; i < totalPages; i++) {
+    pagesArray.push(items.slice(i * itemsPerPage, (i + 1) * itemsPerPage));
+  }
 
   const handleNext = () => {
     if (page < totalPages) setPage(page + 1);
@@ -20,53 +24,62 @@ const GridContent = ({ items }: { items: any[] }) => {
   };
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 pb-2 flex-grow">
-        {currentItems.map((item, idx) => (
-          <a
-            key={idx}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl overflow-hidden hover:bg-neutral-800 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] flex flex-col h-full relative"
-          >
-            {/* Subtle inner glow on hover */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
-            
-            {item.image && (
-              <div className="w-full h-40 relative overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
-            )}
-            <div className="p-5 flex flex-col flex-grow relative z-10">
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
-                  {item.title}
-                </h3>
-                <ExternalLink className="text-neutral-500 group-hover:text-teal-400 w-5 h-5 flex-shrink-0 ml-2" />
-              </div>
-              <p className="text-neutral-400 text-sm mb-6 line-clamp-3">
-                {item.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {item.tags.map((tag: string, tagIdx: number) => (
-                  <span
-                    key={tagIdx}
-                    className="px-3 py-1 bg-neutral-950/80 text-neutral-300 text-xs rounded-full border border-neutral-700/50 group-hover:border-teal-500/40 transition-colors"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </a>
+    <div className="flex flex-col h-full w-full overflow-hidden">
+      <motion.div 
+        className="flex flex-row w-full flex-grow"
+        animate={{ x: `-${(page - 1) * 100}%` }}
+        transition={{ type: "spring", stiffness: 250, damping: 25 }}
+      >
+        {pagesArray.map((pageItems, pageIndex) => (
+          <div key={pageIndex} className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-4 pb-2 px-1">
+            {pageItems.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl overflow-hidden hover:bg-neutral-800 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] flex flex-col h-full relative"
+              >
+                {/* Subtle inner glow on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
+                
+                {item.image && (
+                  <div className="w-full h-36 relative overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-80" />
+                  </div>
+                )}
+                
+                <div className="p-4 md:p-5 flex flex-col flex-grow relative z-10">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
+                      {item.title}
+                    </h3>
+                    <ExternalLink className="w-5 h-5 text-neutral-500 group-hover:text-teal-400 transition-colors flex-shrink-0 ml-2" />
+                  </div>
+                  <p className="text-neutral-400 text-sm mb-6 line-clamp-3">
+                    {item.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {item.tags.map((tag: string, tagIdx: number) => (
+                      <span
+                        key={tagIdx}
+                        className="px-3 py-1 bg-neutral-950/80 text-neutral-300 text-xs rounded-full border border-neutral-700/50 group-hover:border-teal-500/40 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         ))}
-      </div>
+      </motion.div>
       
       {totalPages > 1 && (
         <div className="flex justify-end items-center gap-4 mt-4 pt-4 border-t border-neutral-800/50">
@@ -94,7 +107,7 @@ const GridContent = ({ items }: { items: any[] }) => {
 };
 
 const MovingBorderContainer = ({ title, subtitle, items }: { title: string, subtitle: string, items: any[] }) => (
-  <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl flex flex-col">
+  <div className="projects-cards-view w-full relative rounded-2xl p-4 md:p-6 text-white bg-neutral-950 border border-neutral-800 shadow-2xl flex flex-col">
     {/* Moving border overlay */}
     <div className="absolute inset-[-1px] rounded-[17px] pointer-events-none overflow-hidden [transform:translateZ(0)]">
       <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 animate-[spin_24s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_20%,#ffffff_40%,#38bdf8_48%,transparent_50%,transparent_70%,#ffffff_90%,#38bdf8_98%,transparent_100%)]" />
@@ -236,9 +249,9 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-neutral-950 relative min-h-screen flex flex-col items-center">
+    <section id="projects" className="pt-8 pb-16 bg-neutral-950 relative min-h-screen flex flex-col items-center">
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
-        <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-6">
           Projects & Publications
         </h2>
         
