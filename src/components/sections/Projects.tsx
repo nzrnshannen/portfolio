@@ -158,6 +158,7 @@ export const Projects = () => {
       description: "A dynamic project generator designed for challenging developers with unique problem statements.",
       link: "https://devkwest.vercel.app/",
       image: "/projects/devkwest.png",
+      imageStyle: { objectPosition: "50% 25%" },
       tags: ["Next.js", "React", "Tailwind CSS"],
     },
   ];
