@@ -146,8 +146,9 @@ export const Projects = () => {
     },
     {
       title: "Xpanse",
-      description: "A modern web application.",
+      description: "One Space. Infinite Ways to Collaborate. Bring your project boards and team group chats under a single, unified horizon.",
       link: "https://xpanse-beta.vercel.app/",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
       tags: ["Next.js", "React", "Tailwind CSS"],
     },
     {
