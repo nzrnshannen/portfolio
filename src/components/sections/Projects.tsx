@@ -50,6 +50,7 @@ const GridContent = ({ items }: { items: any[] }) => {
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        style={item.imageStyle}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-80" />
                     </div>
@@ -149,6 +150,7 @@ export const Projects = () => {
       description: "Xpanse is a high-performance, real-time team collaboration ecosystem built utilizing Python, FastAPI, and React. It represents a structural, modern approach to productivity, dissolving the barrier between isolated project management platforms and rapid-fire team communication layers by unifying them into a highly responsive, nested workspace layout.",
       link: "https://xpanse-beta.vercel.app/",
       image: "/projects/xpanse.jpg",
+      imageStyle: { objectPosition: "50% 25%" },
       tags: ["Next.js", "React", "Tailwind CSS"],
     },
     {
