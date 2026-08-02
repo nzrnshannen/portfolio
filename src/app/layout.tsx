@@ -7,6 +7,8 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+import { CanvasTrail } from "@/components/ui/canvas-trail";
+
 export const metadata: Metadata = {
   title: "Shannen Nazareno | Developer Portfolio",
   description: "Developer Portfolio of Shannen Nazareno - Information Systems, Automation, Data Science",
@@ -23,6 +25,7 @@ export default function RootLayout({
       className={`dark ${outfit.variable} h-full antialiased bg-neutral-950 text-neutral-50 scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <CanvasTrail />
         {children}
       </body>
     </html>

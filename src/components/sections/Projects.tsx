@@ -92,7 +92,7 @@ export const Projects = () => {
   ];
 
   const GridContent = ({ items }: { items: any[] }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 pb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 pb-6">
       {items.map((item, idx) => (
         <a
           key={idx}
@@ -105,7 +105,7 @@ export const Projects = () => {
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
           
           {item.image && (
-            <div className="w-full h-48 relative overflow-hidden">
+            <div className="w-full h-40 relative overflow-hidden">
               <img
                 src={item.image}
                 alt={item.title}
@@ -114,9 +114,9 @@ export const Projects = () => {
               <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-transparent transition-colors duration-500" />
             </div>
           )}
-          <div className="p-6 flex flex-col flex-grow relative z-10">
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
+          <div className="p-5 flex flex-col flex-grow relative z-10">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors line-clamp-2">
                 {item.title}
               </h3>
               <ExternalLink className="text-neutral-500 group-hover:text-teal-400 w-5 h-5 flex-shrink-0 ml-2" />
@@ -145,8 +145,8 @@ export const Projects = () => {
       title: "Websites Developed",
       value: "websites",
       content: (
-        <div className="w-full relative rounded-2xl p-6 md:p-10 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold mb-2">Web Applications</h2>
+        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
+          <h2 className="text-xl md:text-3xl font-bold mb-2">Web Applications</h2>
           <p className="text-neutral-400">Full-stack web applications and platforms.</p>
           <GridContent items={websites} />
         </div>
@@ -156,8 +156,8 @@ export const Projects = () => {
       title: "Data Science & Kaggle",
       value: "datascience",
       content: (
-        <div className="w-full relative rounded-2xl p-6 md:p-10 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold mb-2">Data Science Portfolios</h2>
+        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
+          <h2 className="text-xl md:text-3xl font-bold mb-2">Data Science Portfolios</h2>
           <p className="text-neutral-400">Exploratory Data Analysis and Predictive Models.</p>
           <GridContent items={dataScience} />
         </div>
@@ -167,8 +167,8 @@ export const Projects = () => {
       title: "Technical Blogs",
       value: "blogs",
       content: (
-        <div className="w-full relative rounded-2xl p-6 md:p-10 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold mb-2">Articles & Insights</h2>
+        <div className="w-full relative rounded-2xl p-5 md:p-8 text-white bg-neutral-950 border border-neutral-800 shadow-2xl">
+          <h2 className="text-xl md:text-3xl font-bold mb-2">Articles & Insights</h2>
           <p className="text-neutral-400">Published articles on Medium discussing data trends and insights.</p>
           <GridContent items={blogs} />
         </div>
