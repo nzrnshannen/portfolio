@@ -146,9 +146,9 @@ export const Projects = () => {
     },
     {
       title: "Xpanse",
-      description: "One Space. Infinite Ways to Collaborate. Bring your project boards and team group chats under a single, unified horizon.",
+      description: "Xpanse is a high-performance, real-time team collaboration ecosystem built utilizing Python, FastAPI, and React. It represents a structural, modern approach to productivity, dissolving the barrier between isolated project management platforms and rapid-fire team communication layers by unifying them into a highly responsive, nested workspace layout.",
       link: "https://xpanse-beta.vercel.app/",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      image: "/projects/xpanse.jpg",
       tags: ["Next.js", "React", "Tailwind CSS"],
     },
     {
