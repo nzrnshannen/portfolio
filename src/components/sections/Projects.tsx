@@ -138,18 +138,24 @@ export const Projects = () => {
       tags: ["React", "Vite", "Tailwind CSS", "Supabase"],
     },
     {
-      title: "DevKwest",
-      description: "A dynamic project generator designed for challenging developers with unique problem statements.",
-      link: "https://devkwest.vercel.app/",
-      image: "/projects/devkwest.png",
-      tags: ["Next.js", "React", "Tailwind CSS"],
-    },
-    {
       title: "Scikit-Hero",
       description: "An interactive learning platform and introduction to Machine Learning for those who want to learn Scikit-Learn.",
       link: "https://scikit-hero.vercel.app/",
       image: "/projects/scikit-hero.jpg",
       tags: ["Machine Learning", "Scikit-Learn", "React"],
+    },
+    {
+      title: "Xpanse",
+      description: "A modern web application.",
+      link: "https://xpanse-beta.vercel.app/",
+      tags: ["Next.js", "React", "Tailwind CSS"],
+    },
+    {
+      title: "DevKwest",
+      description: "A dynamic project generator designed for challenging developers with unique problem statements.",
+      link: "https://devkwest.vercel.app/",
+      image: "/projects/devkwest.png",
+      tags: ["Next.js", "React", "Tailwind CSS"],
     },
   ];
 
