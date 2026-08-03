@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Award, FileBadge, CheckCircle, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 export const Certifications = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -89,14 +90,19 @@ export const Certifications = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industryCredentials.map((cert, idx) => (
-              <div
+              <GlowCard
                 key={idx}
-                onClick={() => setSelectedImage(cert.image)}
-                className="group relative cursor-pointer bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl overflow-hidden hover:bg-neutral-800 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400 hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] flex flex-col h-full"
+                customSize={true}
+                glowColor="teal"
+                className="group cursor-pointer p-0 hover:scale-[1.02] transition-transform duration-500 flex flex-col h-full !bg-neutral-900/40"
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/5 to-transparent pointer-events-none" />
-                
-                {/* Image Section */}
+                <div 
+                  onClick={() => setSelectedImage(cert.image)}
+                  className="flex flex-col h-full w-full relative z-10 rounded-2xl overflow-hidden"
+                >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
+                  
+                  {/* Image Section */}
                 <div className="w-full h-48 relative overflow-hidden border-b border-neutral-800">
                   <img
                     src={cert.image}
@@ -125,6 +131,7 @@ export const Certifications = () => {
                   <p className="text-neutral-500 text-sm mt-4 font-medium">{cert.date}</p>
                 </div>
               </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -138,11 +145,16 @@ export const Certifications = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {accomplishments.map((acc, idx) => (
-              <div 
+              <GlowCard
                 key={idx}
-                onClick={() => setSelectedImage(acc.image)}
-                className="group p-5 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/40 hover:bg-neutral-800/80 transition-all duration-300 flex items-start gap-4 cursor-pointer"
+                customSize={true}
+                glowColor="teal"
+                className="p-0 !rounded-xl cursor-pointer !bg-neutral-900/40"
               >
+                <div 
+                  onClick={() => setSelectedImage(acc.image)}
+                  className="group p-5 rounded-xl bg-transparent transition-all duration-300 flex items-start gap-4 relative z-10 h-full w-full"
+                >
                 <div className="mt-1 p-2 bg-neutral-950 rounded-lg border border-neutral-800 group-hover:border-teal-500/30">
                   <CheckCircle className="w-4 h-4 text-teal-500" />
                 </div>
@@ -157,6 +169,7 @@ export const Certifications = () => {
                   </div>
                 </div>
               </div>
+              </GlowCard>
             ))}
           </div>
         </div>
