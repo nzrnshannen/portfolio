@@ -36,21 +36,37 @@ export const Certifications = () => {
       title: "Data Analysis with Excel Power Tools",
       issuer: "DataCamp",
       date: "June 21, 2025",
+      image: "/certifications/DAwithexcel.jpg",
+    },
+    {
+      title: "Excel Fundamentals",
+      issuer: "DataCamp",
+      date: "June 15, 2025",
+      image: "/certifications/excelfundamentals.jpg",
+    },
+    {
+      title: "Python Data Fundamentals",
+      issuer: "DataCamp",
+      date: "April 26, 2025",
+      image: "/certifications/pythondatafundamentals.jpg",
     },
     {
       title: "Data Scientist in Python",
       issuer: "DataCamp",
       date: "April 15, 2025",
+      image: "/certifications/datascipython.jpg",
     },
     {
       title: "Associate Data Scientist in Python",
       issuer: "DataCamp",
       date: "April 05, 2025",
+      image: "/certifications/associatedatascipython.jpg",
     },
     {
       title: "Data Analyst in Power BI",
       issuer: "DataCamp",
       date: "June 29, 2024",
+      image: "/certifications/dataanalystpbi.jpg",
     }
   ];
 
@@ -124,7 +140,8 @@ export const Certifications = () => {
             {accomplishments.map((acc, idx) => (
               <div 
                 key={idx}
-                className="group p-5 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/40 hover:bg-neutral-800/80 transition-all duration-300 flex items-start gap-4"
+                onClick={() => setSelectedImage(acc.image)}
+                className="group p-5 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/40 hover:bg-neutral-800/80 transition-all duration-300 flex items-start gap-4 cursor-pointer"
               >
                 <div className="mt-1 p-2 bg-neutral-950 rounded-lg border border-neutral-800 group-hover:border-teal-500/30">
                   <CheckCircle className="w-4 h-4 text-teal-500" />
