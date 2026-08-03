@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Geist } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -8,6 +8,9 @@ const outfit = Outfit({
 });
 
 import { CanvasTrail } from "@/components/ui/canvas-trail";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Shannen Nazareno | Developer Portfolio",
@@ -22,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${outfit.variable} h-full antialiased bg-neutral-950 text-neutral-50 scroll-smooth`}
+      className={cn("dark", "h-full", "antialiased", "bg-neutral-950", "text-neutral-50", "scroll-smooth", outfit.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col font-sans">
         <CanvasTrail />

@@ -1,6 +1,5 @@
 "use client";
 
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -25,7 +24,6 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-24 w-full bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
-      <BackgroundBeams />
       
       <div className="max-w-2xl mx-auto p-4 w-full relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 mb-8">
