@@ -74,8 +74,7 @@ export const Certifications = () => {
   return (
     <section id="certifications" className="py-24 bg-neutral-950 relative flex flex-col items-center">
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
-        <div className="flex items-center justify-center gap-4 mb-16">
-          <Award className="w-8 h-8 md:w-10 md:h-10 text-teal-400" />
+        <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-white">
             Certifications
           </h2>
@@ -83,8 +82,7 @@ export const Certifications = () => {
         
         {/* Industry Credentials Section */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <FileBadge className="w-6 h-6 text-teal-400" />
+          <div className="mb-8">
             <h3 className="text-2xl font-semibold text-white">Industry Credentials</h3>
           </div>
           
@@ -94,11 +92,11 @@ export const Certifications = () => {
                 key={idx}
                 customSize={true}
                 glowColor="teal"
-                className="group cursor-pointer p-0 hover:scale-[1.02] transition-transform duration-500 flex flex-col h-full !bg-neutral-900/40"
+                className="group cursor-pointer p-0 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] transition-all duration-500 flex flex-col h-full bg-transparent border-transparent hover:border-teal-400/50"
               >
                 <div 
                   onClick={() => setSelectedImage(cert.image)}
-                  className="flex flex-col h-full w-full relative z-10 rounded-2xl overflow-hidden"
+                  className="flex flex-col h-full w-full relative z-10 rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm group-hover:bg-neutral-800 transition-all duration-500"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
                   
@@ -138,8 +136,7 @@ export const Certifications = () => {
 
         {/* Statement of Accomplishments Section */}
         <div>
-          <div className="flex items-center gap-3 mb-8">
-            <CheckCircle className="w-6 h-6 text-teal-400" />
+          <div className="mb-8">
             <h3 className="text-2xl font-semibold text-white">Statement of Accomplishments</h3>
           </div>
           

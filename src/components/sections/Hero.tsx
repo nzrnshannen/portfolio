@@ -8,8 +8,8 @@ import { FaMediumM } from "react-icons/fa";
 
 export const Hero = () => {
   return (
-    <section id="about" className="relative w-full h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-neutral-950">
-      <div className="w-full absolute inset-0 h-screen">
+    <section id="about" className="relative w-full min-h-screen py-24 flex flex-col items-center justify-center overflow-hidden bg-neutral-950">
+      <div className="w-full absolute inset-0 h-full">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
@@ -28,7 +28,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          <div className="flex justify-center items-center gap-6 mb-12 md:mb-16">
+          <div className="flex justify-center items-center gap-6 mb-10 md:mb-12">
             <a href="https://github.com/nzrnshannen" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group relative flex justify-center items-center text-white/80 hover:text-[#38bdf8] hover:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] transition-all duration-300">
               <FaGithub className="w-6 h-6 md:w-7 md:h-7" />
               <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform duration-200 bg-neutral-800 border border-neutral-700 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap">

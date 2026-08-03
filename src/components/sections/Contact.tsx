@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+import OrbitingCirclesGlobeDemo from "@/components/ui/orbiting-circles-02";
 
 export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,7 +24,8 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 w-full bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+    <section id="contact" className="py-24 w-full bg-neutral-950 relative flex flex-col items-center justify-center antialiased overflow-hidden">
+      <OrbitingCirclesGlobeDemo />
       
       <div className="max-w-2xl mx-auto p-4 w-full relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 mb-8">
@@ -55,21 +57,23 @@ export const Contact = () => {
             className="w-full rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 bg-neutral-950/50 backdrop-blur-sm text-white px-4 py-3 placeholder:text-neutral-500 outline-none transition-all resize-none"
           />
           
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            disabled={isSubmitting || submitted}
-            type="submit"
-            className="mt-4 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg px-4 py-3 transition-colors flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? (
-              <span className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></span>
-            ) : submitted ? (
-              "Message Sent!"
-            ) : (
-              "Send Message"
-            )}
-          </motion.button>
+          <div className="mt-6 flex justify-center w-full">
+            <MagneticButton>
+              <button
+                disabled={isSubmitting || submitted}
+                type="submit"
+                className="px-8 py-3 rounded-full bg-white text-neutral-950 font-semibold text-lg hover:bg-neutral-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <span className="animate-spin rounded-full h-5 w-5 border-b-2 border-neutral-950"></span>
+                ) : submitted ? (
+                  "Message Sent!"
+                ) : (
+                  "Send Message"
+                )}
+              </button>
+            </MagneticButton>
+          </div>
         </form>
       </div>
     </section>
