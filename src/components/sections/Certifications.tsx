@@ -92,11 +92,11 @@ export const Certifications = () => {
                 key={idx}
                 customSize={true}
                 glowColor="teal"
-                className="group cursor-pointer p-0 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] transition-all duration-500 flex flex-col h-full bg-transparent border-transparent hover:border-teal-400/50"
+                className="group cursor-pointer p-0 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] transition-transform transition-shadow transition-colors duration-500 flex flex-col h-full bg-transparent border-transparent hover:border-teal-400/50"
               >
                 <div 
                   onClick={() => setSelectedImage(cert.image)}
-                  className="flex flex-col h-full w-full relative z-10 rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm group-hover:bg-neutral-800 transition-all duration-500"
+                  className="flex flex-col h-full w-full relative z-10 rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900/90 to-neutral-800/50 backdrop-blur-sm group-hover:bg-neutral-800/80 transition-colors duration-500"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-400/10 to-transparent pointer-events-none" />
                   
