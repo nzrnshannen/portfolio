@@ -38,7 +38,7 @@ const skills = [
   { name: "Git", title: "Tool", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
   { name: "Figma", title: "Design", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
   { name: "Matplotlib", title: "Data Science", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" },
-  { name: "Excel", title: "Tool", icon: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" },
+  { name: "Excel", title: "Tool", icon: "https://img.icons8.com/color/512/microsoft-excel-2019.png" },
   { name: "Notion", title: "Tool", icon: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
   { name: "DBeaver", title: "Database", icon: "https://upload.wikimedia.org/wikipedia/commons/b/b5/DBeaver_logo.svg" },
   { name: "Miniconda", title: "Tool", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" },

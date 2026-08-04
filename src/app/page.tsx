@@ -8,7 +8,7 @@ import { FloatingOutline } from "@/components/ui/floating-outline";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white selection:bg-teal-500/30">
+    <main className="min-h-screen bg-neutral-950 text-white selection:bg-teal-500/30 overflow-x-hidden w-full">
       <FloatingOutline />
       <Hero />
       <Experience />
