@@ -56,8 +56,8 @@ export const FloatingOutline = () => {
           {/* Tooltip / Label */}
           <span
             className={`
-              absolute right-12 text-sm font-medium transition-all duration-300
-              ${activeSection === id ? "opacity-100 text-teal-400 translate-x-0" : "opacity-0 text-neutral-500 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}
+              absolute right-12 px-2.5 py-1 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap
+              ${activeSection === id ? "opacity-100 text-teal-400 bg-neutral-950/70 backdrop-blur-md border border-neutral-800/50 translate-x-0" : "opacity-0 text-neutral-500 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-neutral-950/70 group-hover:backdrop-blur-md group-hover:border group-hover:border-neutral-800/50"}
             `}
           >
             {label}
@@ -66,7 +66,7 @@ export const FloatingOutline = () => {
           {/* Indicator Line */}
           <div
             className={`
-              h-[2px] transition-all duration-300 rounded-full
+              h-[2px] transition-all duration-300 rounded-full drop-shadow-[0_0_2px_rgba(0,0,0,0.8)]
               ${activeSection === id ? "w-8 bg-teal-400" : "w-3 bg-neutral-700 group-hover:w-5 group-hover:bg-neutral-500"}
             `}
           />
