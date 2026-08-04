@@ -42,7 +42,7 @@ const skills = [
   { name: "Notion", title: "Tool", icon: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
   { name: "DBeaver", title: "Database", icon: "https://upload.wikimedia.org/wikipedia/commons/b/b5/DBeaver_logo.svg" },
   { name: "Miniconda", title: "Tool", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" },
-  { name: "GitKraken", title: "Tool", icon: "https://upload.wikimedia.org/wikipedia/commons/e/ee/GitKraken_Icon.png" },
+  { name: "GitKraken", title: "Tool", icon: "https://www.svgrepo.com/show/353782/gitkraken.svg" },
 ];
 
 export const TechStack = () => {
