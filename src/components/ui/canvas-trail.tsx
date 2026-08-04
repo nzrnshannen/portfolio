@@ -20,6 +20,12 @@ export const CanvasTrail = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Disable on mobile/touch screens since this is a mouse-follow effect.
+    // This saves massive GPU/memory overhead that causes crashes on mobile.
+    if (window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -132,7 +138,7 @@ export const CanvasTrail = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[9999]"
+      className="pointer-events-none fixed inset-0 z-[9999] hidden md:block"
     />
   );
 };
