@@ -15,18 +15,33 @@ export const FloatingOutline = () => {
   const [activeSection, setActiveSection] = useState<string>("about");
 
   useEffect(() => {
+    const visibilityMap = new Map<string, number>();
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+          visibilityMap.set(entry.target.id, entry.intersectionRatio);
+        });
+
+        let maxRatio = 0;
+        let mostVisible = "";
+
+        sections.forEach(({ id }) => {
+          const ratio = visibilityMap.get(id) || 0;
+          if (ratio > maxRatio) {
+            maxRatio = ratio;
+            mostVisible = id;
           }
         });
+
+        if (mostVisible) {
+          setActiveSection(mostVisible);
+        }
       },
       {
         root: null,
-        rootMargin: "-20% 0px -40% 0px", // Trigger when element is mostly in center of viewport
-        threshold: 0,
+        rootMargin: "-10% 0px -10% 0px", 
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
       }
     );
 

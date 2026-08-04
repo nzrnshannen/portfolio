@@ -55,7 +55,7 @@ export const Experience = () => {
           </div>
           
           <div className="flex flex-wrap justify-start gap-1.5 mt-1">
-            {["Python", "Apify API", "Google Gemini API", "Web Scraping", "Google Sheets Webhooks", "SendGrid"].map((tech) => (
+            {["Python", "Apify API", "A/B Testing", "Web Scraping", "Google Sheets Webhooks", "Data Visualization"].map((tech) => (
               <span key={tech} className="px-2.5 py-1 bg-neutral-900/50 text-neutral-400 text-[10px] rounded-full border border-neutral-800">
                 {tech}
               </span>
@@ -84,7 +84,7 @@ export const Experience = () => {
           </div>
           
           <div className="flex flex-wrap justify-start gap-1.5 mt-1">
-            {["Custom Gemini Gems", "LinkedIn", "Data Cleaning", "Lead Scraping", "Email Outreach"].map((tech) => (
+            {["Custom Gemini Gems", "Google Sheets", "Data Cleaning", "Lead Scraping", "Email Outreach"].map((tech) => (
               <span key={tech} className="px-2.5 py-1 bg-neutral-900/50 text-neutral-400 text-[10px] rounded-full border border-neutral-800">
                 {tech}
               </span>
