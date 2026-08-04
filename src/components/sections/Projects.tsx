@@ -85,28 +85,27 @@ const GridContent = ({ items }: { items: any[] }) => {
       </div>
       
       {totalPages > 1 && (
-        <>
+        <div className="flex justify-center items-center gap-6 mt-6 mb-2 z-20">
           <button 
             onClick={handlePrev} 
             disabled={page === 1}
-            className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-700/50 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-neutral-900 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-0 disabled:pointer-events-none transition-all"
+            className="p-2 md:p-3 rounded-full bg-neutral-900 border border-neutral-700/50 text-white shadow-md hover:bg-neutral-800 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-30 disabled:pointer-events-none transition-all"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           
+          <div className="text-sm font-semibold text-neutral-400">
+            {page} <span className="text-neutral-600 mx-1">/</span> {totalPages}
+          </div>
+
           <button 
             onClick={handleNext} 
             disabled={page === totalPages}
-            className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-700/50 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-neutral-900 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-0 disabled:pointer-events-none transition-all"
+            className="p-2 md:p-3 rounded-full bg-neutral-900 border border-neutral-700/50 text-white shadow-md hover:bg-neutral-800 hover:border-teal-500/50 hover:text-teal-400 disabled:opacity-30 disabled:pointer-events-none transition-all"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
-
-          {/* Floating page indicator at top right */}
-          <div className="absolute -top-10 right-0 z-20 px-3 py-1 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-800/80 text-xs font-semibold text-neutral-400 shadow-lg pointer-events-none">
-            {page} / {totalPages}
-          </div>
-        </>
+        </div>
       )}
     </div>
   );

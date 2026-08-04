@@ -68,6 +68,30 @@ export const Certifications = () => {
       issuer: "DataCamp",
       date: "June 29, 2024",
       image: "/certifications/dataanalystpbi.jpg",
+    },
+    {
+      title: "JavaScript Essentials 1",
+      issuer: "Cisco Networking Academy",
+      date: "December 06, 2024",
+      image: "/certifications/cisco_jsfundamentals1.jpg",
+    },
+    {
+      title: "Introduction to Data Science",
+      issuer: "Cisco Networking Academy",
+      date: "April 04, 2025",
+      image: "/certifications/cisconetacad_introtods.jpg",
+    },
+    {
+      title: "Statistics Foundations 1: The Basics",
+      issuer: "LinkedIn Learning",
+      date: "June 01, 2025",
+      image: "/certifications/statsfoundation1_basics.jpg",
+    },
+    {
+      title: "Statistics Foundations 2: Probability",
+      issuer: "LinkedIn Learning",
+      date: "June 21, 2025",
+      image: "/certifications/statsfoundation2_probability.jpg",
     }
   ];
 
