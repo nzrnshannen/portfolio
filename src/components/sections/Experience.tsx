@@ -7,6 +7,35 @@ import { Briefcase } from "lucide-react";
 export const Experience = () => {
   const experiences = [
     {
+      title: "Aug 2026 - Oct 2026",
+      content: (
+        <div className="flex flex-col items-start text-left w-full">
+          <div className="flex justify-between items-start w-full mb-3">
+            <div className="flex-1 pr-4">
+              <h4 className="text-lg font-bold text-white leading-tight mb-1 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                Data Scientist
+              </h4>
+              <p className="text-sm text-neutral-400 font-medium">Talleco</p>
+              <p className="text-xs text-neutral-500 mt-1">Aug 2026 - Oct 2026</p>
+            </div>
+            <div className="text-right text-xs text-neutral-400 font-medium leading-relaxed shrink-0">
+              <p>Internship</p>
+              <p>Hybrid</p>
+              <p className="text-[10px] text-neutral-500">Cebu, Philippines</p>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap justify-start gap-1.5 mt-1">
+            {["Python", "SQL", "Data Analysis", "Data Visualization", "Git"].map((tech) => (
+              <span key={tech} className="px-2.5 py-1 bg-neutral-900/50 text-neutral-400 text-[10px] rounded-full border border-neutral-800">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "Mar 2026 - Jul 2026",
       content: (
         <div className="flex flex-col items-start text-left w-full">
