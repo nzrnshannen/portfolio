@@ -114,7 +114,7 @@ const GridContent = ({ items }: { items: any[] }) => {
 const MovingBorderContainer = ({ title, subtitle, items }: { title: string, subtitle: string, items: any[] }) => (
   <div className="projects-cards-view w-full relative rounded-2xl p-4 md:p-6 text-white bg-neutral-950 border border-neutral-800 shadow-2xl flex flex-col">
     {/* Moving border overlay */}
-    <div className="absolute inset-[-1px] rounded-[17px] pointer-events-none overflow-hidden [transform:translateZ(0)]">
+    <div className="absolute inset-[-1px] rounded-[17px] pointer-events-none overflow-hidden">
       <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 animate-[spin_24s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_20%,#ffffff_40%,#38bdf8_48%,transparent_50%,transparent_70%,#ffffff_90%,#38bdf8_98%,transparent_100%)]" />
       <div className="absolute inset-[1px] bg-neutral-950 rounded-2xl" />
     </div>
