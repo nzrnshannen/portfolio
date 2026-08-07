@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 export interface TimelineEntry {
   title: string;
   content: React.ReactNode;
+  className?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -94,7 +95,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ margin: "-30% 0px -30% 0px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="bg-neutral-950 border border-neutral-800/50 rounded-2xl p-5 md:p-6 w-full max-w-sm shadow-[0_0_50px_rgba(0,0,0,0.8)] relative z-20"
+                className={`bg-neutral-950 rounded-2xl p-5 md:p-6 w-full max-w-sm relative z-20 ${
+                  item.className || "border border-neutral-800/50 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+                }`}
               >
                 {item.content}
               </motion.div>

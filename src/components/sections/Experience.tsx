@@ -7,16 +7,17 @@ import { Briefcase } from "lucide-react";
 export const Experience = () => {
   const experiences = [
     {
-      title: "Aug 2026 - Oct 2026",
+      title: "Aug 2026 - Present",
+      className: "border border-sky-500/80 shadow-[0_0_30px_rgba(56,189,248,0.4)]",
       content: (
         <div className="flex flex-col items-start text-left w-full">
           <div className="flex justify-between items-start w-full mb-3">
             <div className="flex-1 pr-4">
-              <h4 className="text-lg font-bold text-white leading-tight mb-1 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+              <h4 className="text-lg font-bold text-sky-400 leading-tight mb-1 drop-shadow-[0_0_12px_rgba(56,189,248,0.8)]">
                 Data Scientist
               </h4>
               <p className="text-sm text-neutral-400 font-medium">Talleco</p>
-              <p className="text-xs text-neutral-500 mt-1">Aug 2026 - Oct 2026</p>
+              <p className="text-xs text-neutral-500 mt-1">Aug 2026 - Present</p>
             </div>
             <div className="text-right text-xs text-neutral-400 font-medium leading-relaxed shrink-0">
               <p>Internship</p>
@@ -27,7 +28,7 @@ export const Experience = () => {
           
           <div className="flex flex-wrap justify-start gap-1.5 mt-1">
             {["Python", "SQL", "Data Analysis", "Data Visualization", "Git"].map((tech) => (
-              <span key={tech} className="px-2.5 py-1 bg-neutral-900/50 text-neutral-400 text-[10px] rounded-full border border-neutral-800">
+              <span key={tech} className="px-2.5 py-1 bg-sky-950/40 text-sky-300 text-[10px] rounded-full border border-sky-800/60 shadow-[0_0_10px_rgba(56,189,248,0.2)]">
                 {tech}
               </span>
             ))}
